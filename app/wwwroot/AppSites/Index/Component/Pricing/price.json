@@ -1,0 +1,79 @@
+{
+  "PriceTitle": "Price Excludes Fly Hosting Charges",
+  "PriceSubTitle": "Localhost Usage : Free ",
+  "PriceHighlight": "Should be appropriate reusable scope",
+  "PriceList": [
+    {
+      "ItemTitle": "Web Hosting",
+      "ItemSubtitle": "Using Static Declarative UI",
+      "ItemPriceRange": "<s>1$ to 10$</s> 1$",
+      "ItemPriceUnit": "Per Month",
+      "ItemPriceFeatureList": [
+        {
+          "FeatureInfo": "With Custom Backend<sup>*</sup>",
+          "FeatureTitleInfo": ""
+        },
+        {
+          "FeatureInfo": "Declarative Open Source UI",
+          "FeatureTitleInfo": ""
+        },
+        {
+          "FeatureInfo": "eg. Static blogs, Astro Blogs, Html Pages",
+          "FeatureTitleInfo": ""
+        }
+      ],
+      "ItemPriceMoreLink": "#",
+      "ItemPriceMoreTitle": "Example Web's",
+      "ItemPriceActionLink": "#",
+      "ItemPriceActionTitle": "Get Started"
+    },
+    {
+      "ItemTitle": "Api Hosting",
+      "ItemSubtitle": "Using Static Declarative UI",
+      "ItemPriceRange": "<s>10$ to 100$</s> 10$",
+      "ItemPriceUnit": "Per Month",
+      "ItemPriceFeatureList": [
+        {
+          "FeatureInfo": "With Custom Backend<sup>*</sup>",
+          "FeatureTitleInfo": ""
+        },
+        {
+          "FeatureInfo": "Declarative Open Source UI",
+          "FeatureTitleInfo": ""
+        },
+        {
+          "FeatureInfo": "eg. Api to Business Central, CRMs etc",
+          "FeatureTitleInfo": ""
+        }
+      ],
+      "ItemPriceMoreLink": "#",
+      "ItemPriceMoreTitle": "Example Api's",
+      "ItemPriceActionLink": "#",
+      "ItemPriceActionTitle": "Get Started"
+    },
+    {
+      "ItemTitle": "App Hosting",
+      "ItemSubtitle": "Using Dynamic Declarative UI",
+      "ItemPriceRange": "<s>25$ to 250$</s> 25$",
+      "ItemPriceUnit": "Per Month",
+      "ItemPriceFeatureList": [
+        {
+          "FeatureInfo": "With Custom Backend<sup>*</sup>",
+          "FeatureTitleInfo": ""
+        },
+        {
+          "FeatureInfo": "Declarative Open Source UI",
+          "FeatureTitleInfo": ""
+        },
+        {
+          "FeatureInfo": "eg. Stock Take, Purchase Order, Sales Order Apps",
+          "FeatureTitleInfo": "Warehouse Management System, Order Management System, Marketplace Management System, Logistics Management System, Loyalty Management System"
+        }
+      ],
+      "ItemPriceMoreLink": "#",
+      "ItemPriceMoreTitle": "Example App's",
+      "ItemPriceActionLink": "#",
+      "ItemPriceActionTitle": "Get Started"
+    }
+  ]
+}

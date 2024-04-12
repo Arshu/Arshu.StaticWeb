@@ -1,0 +1,16 @@
+{
+  "MenuList$": [
+    {
+      "MenuName": "Home1",
+      "MenuLink": "/"
+    },
+    {
+      "MenuName": "Home2",
+      "MenuLink": "/"
+    },
+    {
+      "MenuName": "Home3",
+      "MenuLink": "/"
+    }   
+  ]
+}

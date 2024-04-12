@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <SEO title="Arshu Consultancy"
+         description="App Manager for Managing Fly Machines" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <style>
+        .div {
+            color: gray;
+        }
+    </style>
+
+    <script>
+
+        const theme = (() => {
+            if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                return localStorage.getItem('theme') || 'light'
+            }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark'
+            }
+            return 'light'
+        })()
+
+        if (theme === 'light') {
+            document.documentElement.classList.remove('dark')
+        } else {
+            document.documentElement.classList.add('dark')
+        }
+
+        window.localStorage.setItem('theme', theme)
+
+    </script>
+
+    <link rel="stylesheet" href="/Content/tailwind/output.css">
+
+    <!--
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    -->
+
+</head>
+<body class="bg-white dark:bg-black text-black dark:text-white">
+
+    {{MainNav}}
+
+    {{MainContent}}
+
+    {{MainFooter}}
+
+    <style is:global>
+        /* Improve Page speed */
+        /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+        img {
+            content-visibility: auto;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<span class="md:inline-block">
+    <button type="button" id="darkThemeToggle" aria-label="Dark Theme Toggle" class="hs-dark-mode group flex h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-[#fa5a15] hs-dark-mode-active:hidden dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-[#fb713b] dark:focus:outline-none" data-hs-theme-click-value="dark">
+        <svg class="h-4 w-4 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+    </button>
+    <button type="button" id="lightThemeToggle" aria-label="Light Theme Toggle" class="hidden hs-dark-mode flex group h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:text-[#fa5a15] hs-dark-mode-active:flex dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-[#fb713b] dark:focus:outline-none" data-hs-theme-click-value="light">
+        <svg class="h-4 w-4 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 8a2 2 0 1 0 4 4"></path>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+    </button>
+</span>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function ready() {
+
+        const theme = (() => {
+            if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                return localStorage.getItem('theme') || 'light'
+            }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark'
+            }
+            return 'light'
+        })();
+
+        if (theme === 'light') {
+            document.documentElement.classList.remove('dark')
+        } else {
+            document.documentElement.classList.add('dark')
+        }
+
+        window.localStorage.setItem('theme', theme);
+
+
+        const darkThemeToggle = document.getElementById('darkThemeToggle')
+        const lightThemeToggle = document.getElementById('lightThemeToggle');
+
+        const switchTheme = () => {
+            //alert(document.documentElement.classList);
+            document.documentElement.classList.toggle('dark');
+            //alert(document.documentElement.classList);
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark')
+                darkThemeToggle.classList.remove('hidden')
+                lightThemeToggle.classList.add('hidden')
+            } else {
+                localStorage.setItem('theme', 'light')
+                darkThemeToggle.classList.add('hidden')
+                lightThemeToggle.classList.remove('hidden')
+            }
+        }
+        
+        darkThemeToggle.addEventListener('click', () => {            
+            switchTheme()
+        })
+        lightThemeToggle.addEventListener('click', () => {
+            switchTheme()
+        })
+    });
+
+</script>

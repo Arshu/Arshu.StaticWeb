@@ -1,0 +1,54 @@
+﻿
+
+<section class="flex flex-col-reverse items-center justify-center text-center lg:flex-row shadow">
+    <div class="px-4 mx-auto max-w-2xl">
+        <div class="mx-auto max-w-screen-md text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold">{{$LaunchTitle}}</h2>
+            <p class="font-light text-gray-500 sm:text-xl">{{$LaunchSubTitle}}</p>
+        </div>
+        <div class="grid grid-cols-3 sm:gap-3 xl:gap-10 pb-5">
+            {{@StepList}}
+            <div class="flex flex-col p-2 p-2 md:w-32 m-1 mx-auto max-w-md text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+                <h3 class="mb-4 text-2xl font-semibold">{{$StepTitle}}</h3>
+                <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">{{$StepSubTitle}}</p>
+            </div>
+            {{/StepList}}
+        </div>
+        <div class="gap-2 sm:gap-6 mb-6">
+            <div>
+                <label for="apiKey" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fly Api Key</label>
+                <input type="text" name="apiKey" id="apiKey" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Api Key" required="">
+            </div>
+            <div>
+                <label for="usingDockerTemplate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Using Template</label>
+                <select id="usingDockerTemplate" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    {{@TemplateList}}
+                    <option {{@Selected}} selected="" {{/Selected}} value="{{$TemplatePath}}">{{$TemplateInfo}}</option>
+                    {{/TemplateList}}
+                </select>
+            </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-2 sm:gap-6 mb-6">
+
+            <div>
+                <label for="appName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">App Name</label>
+                <input type="text" name="appName" id="appName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="App Name" required="">
+            </div>
+            <div>
+                <label for="underDomainName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Under DomainName</label>
+                <select id="underDomainName" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    {{@DomainList}}
+                    <option {{@Selected}} selected="selected" {{/Selected}}>{{$DomainName}}</option>
+                    {{/DomainList}}
+                </select>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <button class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Clone
+            </button>
+        </div>
+    </div>
+</section>
+

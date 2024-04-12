@@ -1,0 +1,68 @@
+<div class="theme-switch-wrapper md:flex md:items-center">
+
+    <label data-testid="theme-switch" class="theme-switch relative inline-block h-[34px] w-[60px]" for="checkbox">
+        <input type="checkbox" id="checkbox" class="hidden" />
+        <span class="slider absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-black before:absolute before:bottom-[4px] before:left-[4px] before:h-[26px] before:w-[26px] before:rounded-full before:bg-orange before:transition-[0.4s] dark:bg-white">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </span>
+    </label>
+</div>
+
+<style>
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+</style>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function ready() {
+
+        const theme = (() => {
+            if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                return localStorage.getItem('theme') || 'light'
+            }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark'
+            }
+            return 'light'
+        })()
+
+        if (theme === 'light') {
+            document.documentElement.classList.remove('dark')
+        } else {
+            document.documentElement.classList.add('dark')
+        }
+
+        window.localStorage.setItem('theme', theme);
+
+        const button = document.querySelector(
+            '.theme-switch input[type="checkbox"]'
+        )
+
+        const switchTheme = () => {
+            //alert(document.documentElement.classList);
+            document.documentElement.classList.toggle('dark');
+            //alert(document.documentElement.classList);
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark')
+            } else {
+                localStorage.setItem('theme', 'light')
+            }
+        };
+       
+        button.addEventListener('click', () => {
+            switchTheme();
+        });
+    });
+
+</script>

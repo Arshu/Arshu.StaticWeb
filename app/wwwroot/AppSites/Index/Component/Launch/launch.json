@@ -1,0 +1,41 @@
+{
+  "LaunchTitle": "Create Your Web Presence",
+  "LaunchSubTitle": "In 3 Easy Steps",
+  "StepList": [
+    {
+      "StepTitle": "Clone",
+      "StepSubTitle": "Clone Template"
+    },
+    {
+      "StepTitle": "Upload",
+      "StepSubTitle": "Upload Zip File"
+    },
+    {
+      "StepTitle": "Change",
+      "StepSubTitle": "Configure Server"
+    }
+  ],
+  "TemplateList": [
+    {
+      "TemplateInfo": "FlyRegistry:StaticWeb",
+      "TemplatePath": "registry.fly.io/staticweb:latest",
+      "Selected": false,
+      "Process": false
+    },
+    {
+      "TemplateInfo": "DockerHub:StaticWeb",
+      "TemplatePath": "arshucs/staticweb:latest",
+      "Selected": true
+    }
+  ],
+  "DomainList": [
+    {
+      "DomainName": "pagelah.com",
+      "Selected": false
+    },
+    {
+      "DomainName": "ownlah.com",
+      "Selected": true
+    }
+  ]
+}
